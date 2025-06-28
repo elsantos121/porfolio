@@ -1,0 +1,717 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --morado-oscuro: #2d014d;
+    --morado-claro: #7c3aed;
+    --blanco: #fff;
+    --negro: #18181b;
+    --gris: #232232;
+    --gris-claro: #f3f3f7;
+    --acento: #7c3aed;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--negro);
+    color: var(--blanco);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header */
+.Header {
+    width: 100vw;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--morado-oscuro);
+    color: var(--blanco);
+    padding: 20px 40px;
+    box-shadow: 0 2px 8px rgba(44,0,77,0.10);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.Header_img-container {
+    display: flex;
+    align-items: center;
+}
+
+.Header_img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--morado-claro);
+    transition: transform 0.3s;
+    background: var(--blanco);
+}
+.Header_img:hover {
+    transform: scale(1.08) rotate(-3deg);
+}
+
+.Header_nav {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.Header_list, .Header_cv {
+    cursor: pointer;
+    font-weight: 500;
+    transition: color 0.2s, background 0.2s;
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+}
+
+.Header_list:hover, .Header_cv:hover {
+    color: var(--morado-oscuro);
+    background: var(--blanco);
+}
+
+.Header_cv {
+    background: var(--morado-claro);
+    color: var(--blanco);
+    margin-left: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(124,58,237,0.10);
+}
+
+.Header_cv:hover {
+    background: var(--blanco);
+    color: var(--morado-oscuro);
+}
+
+.header-purple {
+    background: var(--morado-claro) !important;
+    color: var(--negro) !important;
+}
+
+.header-purple .Header_list,
+.header-purple .Header_cv {
+    color: var(--negro);
+}
+
+.header-purple .Header_list:hover,
+.header-purple .Header_cv:hover {
+    background: var(--negro);
+    color: var(--blanco);
+}
+
+.header-purple .Header_img {
+    border-color: var(--negro);
+}
+
+/* Secciones principales */
+.SobreMi, .Educacion, .proyectos, .SkillsSection {
+    width: 100vw;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    scroll-margin-top: 80px;
+}
+
+.SobreMi {
+    background: linear-gradient(120deg, var(--morado-oscuro) 70%, var(--negro) 100%);
+    border-radius: 0 0 30px 30px;
+}
+
+.SobreMi_content, .Educacion_content, .Proyectos_grid, .SkillsSection_content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.SobreMi_content, .Educacion_content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    height: 100%;
+}
+
+.SobreMi_text, .Educacion_text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.TituloSobreMi, .TituloEducacion {
+    font-size: 3.5rem;
+    margin-bottom: 18px;
+    color: var(--blanco);
+    font-weight: bold;
+    text-align: left;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 8px rgba(44,0,77,0.18);
+}
+
+.SobreMi_lista {
+    color: var(--blanco);
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+    list-style: disc inside;
+    opacity: 0.95;
+}
+
+.SobreMi_btns {
+    margin-top: 32px;
+    display: flex;
+    gap: 18px;
+}
+
+.btn-principal, .btn-secundario {
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(44,0,77,0.10);
+    border: none;
+}
+
+.btn-principal {
+    background: var(--morado-claro);
+    color: var(--blanco);
+}
+
+.btn-principal:hover {
+    background: var(--blanco);
+    color: var(--morado-oscuro);
+}
+
+.btn-secundario {
+    background: var(--blanco);
+    color: var(--morado-oscuro);
+}
+
+.btn-secundario:hover {
+    background: var(--morado-claro);
+    color: var(--blanco);
+}
+
+.ImagenSobreMi, .Educacion_img {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid var(--morado-claro);
+    box-shadow: 0 4px 32px rgba(44,0,77,0.13);
+    flex-shrink: 0;
+    background: var(--blanco);
+}
+
+.Educacion {
+    background: linear-gradient(120deg, var(--negro) 70%, var(--morado-oscuro) 100%);
+    border-radius: 30px;
+    box-shadow: 0 2px 16px rgba(44,0,77,0.13);
+}
+
+.Educacion_lista {
+    list-style: disc inside;
+    margin-top: 12px;
+    color: var(--blanco);
+    font-size: 1.15rem;
+    padding-left: 0;
+    opacity: 0.95;
+}
+
+.Educacion_lista li {
+    margin-bottom: 10px;
+}
+
+/* Skills Section */
+.SkillsSection {
+    background: linear-gradient(120deg, var(--blanco) 60%, var(--morado-claro) 100%);
+    color: var(--morado-oscuro);
+    min-height: 60vh;
+    padding: 60px 0 40px 0;
+}
+
+.SkillsSection_content {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.SkillsSection_title {
+    font-size: 2.5rem;
+    color: var(--morado-oscuro);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 8px rgba(44,0,77,0.10);
+}
+
+.SkillsSection_group {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 10px;
+}
+
+.SkillsSection_group h2 {
+    font-size: 1.3rem;
+    color: var(--morado-oscuro);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.SkillsSection_icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.SkillsSection_icons img {
+    height: 38px;
+    border-radius: 6px;
+    background: var(--blanco);
+    box-shadow: 0 2px 8px rgba(44,0,77,0.06);
+    transition: transform 0.2s, box-shadow 0.2s, box-shadow 0.4s;
+    padding: 2px 0;
+}
+
+.SkillsSection_icons img:hover {
+    transform: scale(1.08) rotate(-2deg);
+    box-shadow: 0 4px 16px rgba(44,0,77,0.18), 0 0 16px 2px var(--morado-claro);
+}
+
+/* Proyectos */
+.proyectos {
+    background: linear-gradient(120deg, var(--morado-oscuro) 60%, var(--negro) 100%);
+    flex-direction: column;
+}
+
+.TituloProyectos {
+    font-size: 3rem;
+    color: var(--blanco);
+    margin: 60px 0 40px 0;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(44,0,77,0.18);
+}
+
+.Proyectos_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 40px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+    box-sizing: border-box;
+}
+
+.Proyecto {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 2px 12px rgba(44,0,77,0.10);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: block;
+    text-decoration: none;
+    background: var(--blanco);
+}
+
+.ImagenesProyectos {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 20px;
+    background: var(--blanco);
+    display: block;
+    transition: filter 0.3s;
+}
+
+.Proyecto_overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(44,0,77,0.92);
+    color: var(--blanco);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: scale(0.98);
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+}
+
+.Proyecto:hover, .Proyecto:focus {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(44,0,77,0.18);
+    z-index: 2;
+}
+.Proyecto:hover .Proyecto_overlay, .Proyecto:focus .Proyecto_overlay {
+    opacity: 1;
+    transform: scale(1.04);
+}
+.Proyecto:hover .ImagenesProyectos, .Proyecto:focus .ImagenesProyectos {
+    filter: blur(2px) brightness(0.7);
+}
+
+.Proyecto_overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: var(--morado-claro);
+}
+.Proyecto_overlay p {
+    font-size: 1.1rem;
+    color: var(--blanco);
+}
+
+/* Animaciones generales */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px);}
+    50% { transform: translateY(-18px);}
+    100% { transform: translateY(0px);}
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fondo animado para secciones principales */
+.SobreMi, .Educacion, .proyectos {
+    background-size: 200% 200%;
+    animation: gradientBG 12s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decoración de fondo con círculos flotantes */
+.SobreMi::before, .Educacion::before, .proyectos::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.13;
+    z-index: 0;
+    pointer-events: none;
+}
+.SobreMi::before {
+    width: 340px; height: 340px;
+    background: var(--morado-claro);
+    top: 10%; left: -120px;
+    animation: float 7s ease-in-out infinite;
+}
+.Educacion::before {
+    width: 220px; height: 220px;
+    background: var(--blanco);
+    bottom: 8%; right: -80px;
+    animation: float 9s ease-in-out infinite;
+}
+.proyectos::before {
+    width: 180px; height: 180px;
+    background: var(--morado-claro);
+    top: 60%; left: -60px;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Animación de entrada para imágenes principales */
+.ImagenSobreMi, .Educacion_img {
+    animation: float 4s ease-in-out infinite;
+    box-shadow: 0 8px 32px 0 rgba(44,0,77,0.18), 0 1.5px 8px 0 var(--morado-claro);
+    z-index: 1;
+}
+
+/* Animación de resplandor en botones principales */
+.btn-principal, .btn-secundario {
+    position: relative;
+    overflow: hidden;
+}
+.btn-principal::after, .btn-secundario::after {
+    content: "";
+    position: absolute;
+    left: -75%;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, var(--blanco), transparent);
+    opacity: 0.18;
+    transform: skewX(-20deg);
+    transition: left 0.4s;
+    pointer-events: none;
+}
+.btn-principal:hover::after, .btn-secundario:hover::after {
+    left: 120%;
+}
+
+/* Animación de subrayado en links del header */
+.Header_list, .Header_cv {
+    position: relative;
+}
+.Header_list::after, .Header_cv::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 20%;
+    bottom: 4px;
+    width: 60%;
+    height: 2px;
+    background: var(--morado-oscuro);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+.Header_list:hover::after, .Header_cv:hover::after {
+    transform: scaleX(1);
+}
+
+/* SkillsSection animación de título */
+.SkillsSection_title img {
+    animation: float 3.5s ease-in-out infinite;
+}
+
+/* Animación de badges de skills */
+.SkillsSection_icons img {
+    box-shadow: 0 2px 8px rgba(44,0,77,0.10), 0 0px 0px 0 var(--morado-claro);
+    transition: transform 0.2s, box-shadow 0.2s, box-shadow 0.4s;
+}
+.SkillsSection_icons img:hover {
+    box-shadow: 0 4px 16px rgba(44,0,77,0.18), 0 0 16px 2px var(--morado-claro);
+}
+
+/* Animación de overlay en proyectos */
+.Proyecto_overlay {
+    transition: opacity 0.3s, transform 0.3s;
+    transform: scale(0.98);
+}
+.Proyecto:hover .Proyecto_overlay, .Proyecto:focus .Proyecto_overlay {
+    opacity: 1;
+    transform: scale(1.04);
+}
+
+/* Animación de entrada fadeInUp */
+.anim-fadein {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1s forwards;
+}
+.Proyectos_grid .anim-fadein:nth-child(1) { animation-delay: 0.1s; }
+.Proyectos_grid .anim-fadein:nth-child(2) { animation-delay: 0.2s; }
+.Proyectos_grid .anim-fadein:nth-child(3) { animation-delay: 0.3s; }
+.Proyectos_grid .anim-fadein:nth-child(4) { animation-delay: 0.4s; }
+.Proyectos_grid .anim-fadein:nth-child(5) { animation-delay: 0.5s; }
+.Proyectos_grid .anim-fadein:nth-child(6) { animation-delay: 0.6s; }
+
+/* Footer animado */
+.Footer {
+    border-top: 3px solid var(--morado-claro);
+    box-shadow: 0 -2px 16px 0 rgba(44,0,77,0.10);
+    position: relative;
+    overflow: hidden;
+}
+.Footer::before {
+    content: "";
+    position: absolute;
+    left: -60px;
+    top: -40px;
+    width: 180px;
+    height: 180px;
+    background: var(--morado-claro);
+    border-radius: 50%;
+    opacity: 0.10;
+    z-index: 0;
+    animation: float 8s ease-in-out infinite;
+}
+.Footer_content, .Footer_copy {
+    position: relative;
+    z-index: 1;
+}
+
+.Footer_message {
+    color: var(--blanco);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    text-align: center;
+    opacity: 0.85;
+    letter-spacing: 0.5px;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+.Footer_content {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.Footer_link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: var(--morado-oscuro); /* Cambiado a morado oscuro */
+    color: var(--morado-claro);
+    font-size: 1.7rem;
+    margin: 0 2px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(44,0,77,0.10);
+    text-decoration: none;
+    border: none;
+    position: relative;
+}
+
+.Footer_link:hover, .Footer_link:focus {
+    background: var(--morado-claro);
+    color: var(--blanco);
+    box-shadow: 0 4px 16px rgba(44,0,77,0.18);
+}
+
+.Footer_icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    display: block;
+    filter: grayscale(0.2) brightness(0.95) drop-shadow(0 1px 2px rgba(44,0,77,0.08));
+    transition: filter 0.2s, transform 0.2s;
+}
+
+.Footer_link:hover .Footer_icon,
+.Footer_link:focus .Footer_icon {
+    filter: grayscale(0) brightness(1.1) drop-shadow(0 2px 8px var(--blanco));
+    transform: scale(1.12) rotate(-6deg);
+}
+
+@media (max-width: 1200px) {
+    .SobreMi_content, .Educacion_content, .Proyectos_grid, .SkillsSection_content {
+        max-width: 98vw;
+        padding: 30px 10px;
+    }
+    .ImagenSobreMi, .Educacion_img {
+        width: 220px;
+        height: 220px;
+    }
+    .Proyectos_grid {
+        gap: 20px;
+    }
+    .ImagenesProyectos {
+        height: 180px;
+    }
+}
+
+@media (max-width: 900px) {
+    .SobreMi_content, .Educacion_content {
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+    .SobreMi_text, .Educacion_text {
+        align-items: center;
+        justify-content: center;
+    }
+    .TituloSobreMi, .TituloEducacion {
+        text-align: center;
+    }
+    .ImagenSobreMi, .Educacion_img {
+        margin-bottom: 20px;
+    }
+    .Proyectos_grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        gap: 16px;
+    }
+    .ImagenesProyectos {
+        height: 120px;
+    }
+}
+
+@media (max-width: 600px) {
+    .Header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 10px;
+    }
+    .Header_nav {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .SobreMi, .Educacion, .proyectos, .SkillsSection {
+        min-height: 100vh;
+        padding: 0;
+    }
+    .SobreMi_content, .Educacion_content, .Proyectos_grid, .SkillsSection_content {
+        padding: 15px 2px;
+    }
+    .ImagenSobreMi, .Educacion_img {
+        width: 110px;
+        height: 110px;
+    }
+    .Proyectos_grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        gap: 10px;
+    }
+    .ImagenesProyectos {
+        height: 80px;
+    }
+    .Footer_content {
+        flex-direction: column;
+        gap: 18px;
+    }
+    .Footer_copy {
+        font-size: 0.9rem;
+    }
+    .SkillsSection_title {
+        font-size: 1.5rem;
+    }
+    .SkillsSection_icons img {
+        height: 24px;
+    }
+}
